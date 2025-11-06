@@ -130,7 +130,7 @@
     init() {
       // 게임 상태
       this.board = Array.from({ length: ROWS }, () => Array.from({ length: COLS }, () => Phaser.Math.Between(1, 10)));
-      this.targets = Array.from({ length: 8 }, () => Phaser.Math.Between(5, 50));
+      this.targets = Array.from({ length: 8 }, () => Phaser.Math.Between(5, 30));
       this.score = 0;
 
       this.selected = []; // [{r,c}, ...]
@@ -279,7 +279,7 @@
         btn.on('pointerdown', () => {
           // 리셋 (룰/UI 그대로)
           this.board = Array.from({ length: ROWS }, () => Array.from({ length: COLS }, () => Phaser.Math.Between(1, 10)));
-          this.targets = Array.from({ length: 8 }, () => Phaser.Math.Between(5, 50));
+          this.targets = Array.from({ length: 8 }, () => Phaser.Math.Between(5, 30));
           this.score = 0;
           this.selected = [];
           this.dragging = false;
@@ -300,4 +300,5 @@
   };
 
   new Phaser.Game(config);
+
 })();
